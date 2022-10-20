@@ -5,11 +5,11 @@
 | Column             | Type                | Options                   |
 |--------------------|---------------------|---------------------------|
 | email              | string              | null: false, unique: true |
-| password           | string              | null: false  unique: true |
+| encrypted_password | string              | null: false  unique: true |
 | nickname           | string              | null: false               |
-| first-name         | text                | null: false               |
-| last-name          | text                | null: false               |
-| date-of-birth      | text                | null: false               |
+| first_name         | text                | null: false               |
+| last_name          | text                | null: false               |
+| date               | text                | null: false               |
 
 
 ## contents テーブル
@@ -18,15 +18,14 @@
 | -----------------| -----------| -------------------------------|
 | title            | string     | null: false                    |
 | item             | text       | null: false                    |
-| img              | text       | null: false                    |
-| item-price       | text       | null: false,                   |
-| item-explain     | text       | null: false,                   |
-| item-name        | text       | null: false,                   |
-| item-category    | text       | null: false,                   |
-| item-situation   | text       | null: false,                   |
-| delivery-charge  | text       | null: false,                   |
-| shipping-area    | text       | null: false,                   |
-| date-of-shipment | text       | null: false,                   |
+| item_price       | integer    | null: false,                   |
+| item_explain     | text       | null: false,                   |
+| item_name        | text       | null: false,                   |
+| item_category    | text       | null: false,                   |
+| item_situation   | text       | null: false,                   |
+| delivery_charge  | text       | null: false,                   |
+| shipping_area    | text       | null: false,                   |
+| date_of_shipment | text       | null: false,                   |
 | users_id         | text       | null: false,foreign_key: true  |
 
 
@@ -44,13 +43,12 @@
 
 | Column              | Type       | Options                           |
 | ------------------- | ---------- | --------------------------------- |
-| post-code           | text       | null: false                       |
-| prefectures         | text       | null: false                       |
-| municipality        | text       | null: false                       |
-| address             | text       | null: false                       |
-| building            | text       | null: false                       |
-| phone-number        | text       | null: false                       |
-| users_id            | text       | null: false,foreign_key: true     |
-| purchase_id         | text       | null: false,foreign_key: true     |
+| post_code           | text       | null: false                       |
+| prefecture_id       | integer    | null: false                       |
+| municipality        | string     | null: false                       |
+| address             | string     | null: false                       |
+| building            | string     |                                   |
+| phone_number        | string     | null: false                       |
+| purchase            | references | null: false,foreign_key: true     |
 
 
