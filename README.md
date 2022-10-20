@@ -14,7 +14,7 @@
 | date_of_birth      | date                | null: false               |
 ## Association
 - has_many :contents
-- has_many :purchase
+- has_many :purchases
 
 ## contents テーブル
 
