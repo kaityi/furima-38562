@@ -1,24 +1,56 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column             | Type                | Options                   |
+|--------------------|---------------------|---------------------------|
+| email              | string              | null: false, unique: true |
+| password           | string              | null: false  unique: true |
+| nickname           | string              | null: false               |
+| first-name         | text                | null: false               |
+| last-name          | text                | null: false               |
+| date-of-birth      | text                | null: false               |
 
-* Ruby version
 
-* System dependencies
+## contents テーブル
 
-* Configuration
+| Column           | Type       | Options                        |
+| -----------------| -----------| -------------------------------|
+| title            | string     | null: false                    |
+| item             | text       | null: false                    |
+| img              | text       | null: false                    |
+| item-price       | text       | null: false,                   |
+| item-explain     | text       | null: false,                   |
+| item-name        | text       | null: false,                   |
+| item-category    | text       | null: false,                   |
+| item-situation   | text       | null: false,                   |
+| delivery-charge  | text       | null: false,                   |
+| shipping-area    | text       | null: false,                   |
+| date-of-shipment | text       | null: false,                   |
+| users_id         | text       | null: false,foreign_key: true  |
 
-* Database creation
 
-* Database initialization
+## purchase テーブル
 
-* How to run the test suite
+| Column      | Type       | Options                           |
+| ----------- | ---------- | --------------------------------- |
+| buyer       | text       | null: false                       |
+| item        | text       | null: false                       |
+| users_id    | text       | null: false,foreign_key: true     |
+| contents_id | text       | null: false,foreign_key: true     |
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## shipping テーブル
 
-* ...
+| Column              | Type       | Options                           |
+| ------------------- | ---------- | --------------------------------- |
+| post-code           | text       | null: false                       |
+| prefectures         | text       | null: false                       |
+| municipality        | text       | null: false                       |
+| address             | text       | null: false                       |
+| building            | text       | null: false                       |
+| phone-number        | text       | null: false                       |
+| users_id            | text       | null: false,foreign_key: true     |
+| purchase_id         | text       | null: false,foreign_key: true     |
+
+
