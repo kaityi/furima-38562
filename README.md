@@ -14,7 +14,7 @@
 | date_of_birth      | date                | null: false               |
 ## Association
 - has_many :contents
-- has_one :purchase
+- has_many :purchase
 
 ## contents テーブル
 
@@ -40,7 +40,7 @@
 | Column      | Type       | Options                           |
 | ----------- | ---------- | --------------------------------- |
 | user        | references | null: false,foreign_key: true     |
-| content    | references | null: false,foreign_key: true     |
+| content     | references | null: false,foreign_key: true     |
 
 ## Association
 
