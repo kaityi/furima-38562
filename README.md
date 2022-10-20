@@ -14,26 +14,26 @@
 | date_of_birth      | date                | null: false               |
 ## Association
 - has_many :contents
-- has_many :purchases
+- has_one :purchase
 
 ## contents テーブル
 
 | Column              | Type       | Options                        |
 | --------------------| -----------| -------------------------------|
-| item_name           | integer    | null: false                    |
+| item_name           | string    | null: false                    |
 | item_price          | integer    | null: false                    |
 | item_explain        | text       | null: false                    |
 | item_category_id    | integer    | null: false                    |
 | item_situation_id   | integer    | null: false                    |
 | delivery_charge_id  | integer    | null: false                    |
-| shipping_area_id    | integer    | null: false                    |
+| prefecture_id       | integer    | null: false                    |
 | date_of_shipment_id | integer    | null: false                    |
 | user                | references | null: false,foreign_key: true  |
 
 ## Association
 
 - belongs_to :user
-- has_many :purchases
+- has_one :purchase
 
 ## purchases テーブル
 
@@ -46,10 +46,10 @@
 
 - belongs_to :user
 - belongs_to :content
-- has_many :shippings
+- has_one :shipping
 
 
-## shipping テーブル
+## shippings テーブル
 
 | Column              | Type       | Options                           |
 | ------------------- | ---------- | --------------------------------- |
