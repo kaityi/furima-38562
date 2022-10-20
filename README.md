@@ -12,24 +12,28 @@
 | first_name_2       | string              | null: false               |
 | last_name_2        | string              | null: false               |
 | date_of_birth      | date                | null: false               |
-
+## Association
+- has_many :contents
+- has_many :purchases
 
 ## contents テーブル
 
 | Column              | Type       | Options                        |
 | --------------------| -----------| -------------------------------|
-| item_price          | integer    | null: false,                   |
-| item_explain        | integer    | null: false,                   |
-| item_category_id    | integer    | null: false,                   |
-| item_situation_id   | integer    | null: false,                   |
-| delivery_charge_id  | integer    | null: false,                   |
-| shipping_area_id    | integer    | null: false,                   |
-| date_of_shipment_id | integer    | null: false,                   |
+| item_name           | integer    | null: false                    |
+| item_price          | integer    | null: false                    |
+| item_explain        | text       | null: false                    |
+| item_category_id    | integer    | null: false                    |
+| item_situation_id   | integer    | null: false                    |
+| delivery_charge_id  | integer    | null: false                    |
+| shipping_area_id    | integer    | null: false                    |
+| date_of_shipment_id | integer    | null: false                    |
 | user                | references | null: false,foreign_key: true  |
 
 ## Association
 
-- belongs_to :users
+- belongs_to :user
+- has_many :purchases
 
 ## purchases テーブル
 
@@ -40,8 +44,10 @@
 
 ## Association
 
-- belongs_to :users
-- belongs_to :contents
+- belongs_to :user
+- belongs_to :content
+- has_many :shippings
+
 
 ## shipping テーブル
 
@@ -57,4 +63,4 @@
 
 ## Association
 
-- belongs_to :purchases
+- belongs_to :purchase
