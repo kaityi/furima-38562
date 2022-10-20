@@ -27,6 +27,9 @@
 | date_of_shipment_id | integer    | null: false,                   |
 | user                | references | null: false,foreign_key: true  |
 
+## Association
+
+- belongs_to :users
 
 ## purchases テーブル
 
@@ -35,6 +38,10 @@
 | user        | references | null: false,foreign_key: true     |
 | content    | references | null: false,foreign_key: true     |
 
+## Association
+
+- belongs_to :users
+- belongs_to :contents
 
 ## shipping テーブル
 
@@ -50,7 +57,4 @@
 
 ## Association
 
-- belongs_to :shipping
 - belongs_to :purchases
-- belongs_to :users
-- belongs_to :contents
