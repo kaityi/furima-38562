@@ -16,26 +16,24 @@
 
 ## contents テーブル
 
-| Column           | Type       | Options                        |
-| -----------------| -----------| -------------------------------|
-| title            | string     | null: false                    |
-| item             | text       | null: false                    |
-| item_price       | integer    | null: false,                   |
-| item_explain     | text       | null: false,                   |
-| item_category    | text       | null: false,                   |
-| item_situation   | text       | null: false,                   |
-| delivery_charge  | text       | null: false,                   |
-| shipping_area    | text       | null: false,                   |
-| date_of_shipment | text       | null: false,                   |
-| users            | references | null: false,foreign_key: true  |
+| Column              | Type       | Options                        |
+| --------------------| -----------| -------------------------------|
+| item_price          | integer    | null: false,                   |
+| item_explain        | integer    | null: false,                   |
+| item_category_id    | integer    | null: false,                   |
+| item_situation_id   | integer    | null: false,                   |
+| delivery_charge_id  | integer    | null: false,                   |
+| shipping_area_id    | integer    | null: false,                   |
+| date_of_shipment_id | integer    | null: false,                   |
+| user                | references | null: false,foreign_key: true  |
 
 
-## purchase テーブル
+## purchases テーブル
 
 | Column      | Type       | Options                           |
 | ----------- | ---------- | --------------------------------- |
-| users    | references    | null: false,foreign_key: true     |
-| contents | references    | null: false,foreign_key: true     |
+| user        | references | null: false,foreign_key: true     |
+| content    | references | null: false,foreign_key: true     |
 
 
 ## shipping テーブル
@@ -50,4 +48,9 @@
 | phone_number        | string     | null: false                       |
 | purchase            | references | null: false,foreign_key: true     |
 
+## Association
 
+- belongs_to :shipping
+- belongs_to :purchases
+- belongs_to :users
+- belongs_to :contents
