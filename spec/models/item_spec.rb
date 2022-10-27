@@ -70,7 +70,7 @@ RSpec.describe Item, type: :model do
         @item.item_price = '９９９９'
         @item.valid?
         expect(@item.errors.full_messages).to include("Item price is not a number")
-        user
+        @user
       end
     end
   end
