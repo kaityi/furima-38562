@@ -1,5 +1,7 @@
 FactoryBot.define do
-  factory :item :user do
+  factory :item  do
+    association :user, factory: :user
+
     item_name            {'ペン'}
     item_price             {'1000'}
     item_explain            {'これはペンです'}
@@ -11,7 +13,6 @@ FactoryBot.define do
 
     after(:build) do |item|
       item.image.attach(io: File.open('public/images/test.png'), filename: 'test.png')
-      association :user, factory: :user
     end
   end
 end

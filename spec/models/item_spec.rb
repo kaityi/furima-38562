@@ -70,7 +70,12 @@ RSpec.describe Item, type: :model do
         @item.item_price = '９９９９'
         @item.valid?
         expect(@item.errors.full_messages).to include("Item price is not a number")
-        @user
+        
+      end
+      it 'userが紐付いていないと保存できない' do
+        @item.user = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include('User must exist')
       end
     end
   end
