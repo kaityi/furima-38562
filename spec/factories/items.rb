@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :item do
+  factory :item :user do
     item_name            {'ペン'}
     item_price             {'1000'}
     item_explain            {'これはペンです'}
