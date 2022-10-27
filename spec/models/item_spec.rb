@@ -5,7 +5,7 @@ RSpec.describe Item, type: :model do
     @item = FactoryBot.build(:item)
   end
   describe "商品出品機能" do
-    context '出品ができる場合' do
+    context '全ての項目が入力されていれば出品できる' do
       it 'item_name item_price item_explain item_category_id item_situation_id prefecture_id delivery_charge_id date_of_shipment_id item user' do
        expect(@item).to be_valid
       end
