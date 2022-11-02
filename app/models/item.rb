@@ -7,6 +7,7 @@ class Item < ApplicationRecord
   belongs_to :date_of_shipment
   belongs_to :user
   has_one_attached :image
+  has_one :purchase
 
   validates :item_category_id, numericality: { other_than: 1 , message: "can't be blank"} 
   validates :item_situation_id, numericality: { other_than: 1 , message: "can't be blank"} 
