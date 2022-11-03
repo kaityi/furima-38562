@@ -16,9 +16,4 @@ class User < ApplicationRecord
     validates :first_name2
     validates :last_name_2
   end
-  
-
-  
-
-
 end
