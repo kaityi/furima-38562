@@ -9,7 +9,7 @@ RSpec.describe PurchaseShipping, type: :model do
         sleep(1)
       end
     context '全ての項目が入力されていれば購入できる' do
-      it 'post_code, prefecture_id, municipality, address, phone_number,user_id' do
+      it 'post_code, prefecture_id, municipality, address, phone_number,user_id,token、' do
         expect(@purchase_shipping).to be_valid
       end
       it '建物名は空でも登録できる' do
@@ -72,6 +72,16 @@ RSpec.describe PurchaseShipping, type: :model do
         @purchase_shipping.phone_number = '０９０１１１１１１１１'
         @purchase_shipping.valid?
         expect(@purchase_shipping.errors.full_messages).to include('Phone number 半角で入力してください')
+      end
+      it "userと紐づいていないと登録できない" do
+        @purchase_shipping.user_id = nil
+        @purchase_shipping.valid?
+        expect(@purchase_shipping.errors.full_messages).to include("User can't be blank")
+      end
+      it "itemと紐づいていないと登録できない" do
+        @purchase_shipping.item_id = nil
+        @purchase_shipping.valid?
+        expect(@purchase_shipping.errors.full_messages).to include("Item can't be blank")
       end
 
     end
