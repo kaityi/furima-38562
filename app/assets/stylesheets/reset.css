@@ -124,3 +124,8 @@ legend {
 }
 /* YUI CSS Detection Stamp */
 #yui3-css-stamp.cssreset { display: none; }
+.preview {
+  height: 250px;
+  width: 250px;
+  object-fit: contain;
+}
