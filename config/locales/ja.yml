@@ -3,9 +3,6 @@ ja:
     attributes:
       user:
         nickname: ニックネーム
-        email: メールアドレス
-        password: パスワード
-        password_confirmation: 確認用パスワード
         first_name: 苗字
         last_name: 名前
         first_name2: カタカナ苗字
