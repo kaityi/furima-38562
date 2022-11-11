@@ -63,9 +63,9 @@ gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 gem 'active_hash'
 gem 'pry-rails'
+
+
 gem 'payjp'
 gem "aws-sdk-s3", require: false
 gem 'rails-i18n'
-group :production do
-  gem 'unicorn', '5.4.1'
-end
+
